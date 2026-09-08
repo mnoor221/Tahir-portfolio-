@@ -1,0 +1,843 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tahir Muhammad Nur | AI Trainer & AI Data Specialist</title>
+    <meta name="description" content="Portfolio of Tahir Muhammad Nur - AI Trainer, AI Data & Evaluation Specialist, and Prompt Engineer skilled in LLM evaluation, prompt engineering, data quality assurance, and AI-assisted development.">
+    <style>
+        :root {
+            --bg-dark: #0a0f1d;
+            --bg-card: #111827;
+            --bg-card-hover: #1f2937;
+            --primary: #3b82f6;
+            --primary-hover: #2563eb;
+            --accent: #06b6d4;
+            --text-main: #f9fafb;
+            --text-muted: #9ca3af;
+            --border-color: #1f2937;
+            --font-main: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-main);
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        a {
+            color: var(--primary);
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        a:hover {
+            color: var(--accent);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        /* Navbar */
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background-color: rgba(10, 15, 29, 0.9);
+            backdrop-filter: blur(8px);
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 1.25rem;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            color: var(--text-main);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 1.5rem;
+            list-style: none;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            font-weight: 500;
+        }
+
+        .nav-links a:hover {
+            color: var(--text-main);
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.6rem 1.2rem;
+            border-radius: 6px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            cursor: pointer;
+            text-align: center;
+            border: 1px solid transparent;
+            transition: all 0.2s ease;
+        }
+
+        .btn-primary {
+            background-color: var(--primary);
+            color: #fff;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--primary-hover);
+            color: #fff;
+        }
+
+        .btn-outline {
+            border-color: var(--border-color);
+            color: var(--text-main);
+            background-color: transparent;
+        }
+
+        .btn-outline:hover {
+            background-color: var(--bg-card-hover);
+            border-color: var(--text-muted);
+        }
+
+        /* Hero Section */
+        #hero {
+            padding: 6rem 0 4rem 0;
+            text-align: center;
+        }
+
+        .hero-title {
+            font-size: 3rem;
+            font-weight: 800;
+            letter-spacing: -1px;
+            margin-bottom: 0.5rem;
+        }
+
+        .hero-subtitle {
+            font-size: 1.25rem;
+            color: var(--accent);
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-bio {
+            max-width: 700px;
+            margin: 0 auto 2rem auto;
+            color: var(--text-muted);
+            font-size: 1.05rem;
+        }
+
+        .hero-cta {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        /* Sections */
+        section {
+            padding: 4rem 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .section-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 2rem;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -6px;
+            width: 40px;
+            height: 3px;
+            background-color: var(--primary);
+            border-radius: 2px;
+        }
+
+        /* About & Summary */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 2rem;
+        }
+
+        .card {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 1.5rem;
+        }
+
+        /* Skills */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .skill-card h3 {
+            font-size: 1.1rem;
+            color: var(--accent);
+            margin-bottom: 1rem;
+        }
+
+        .skill-list {
+            list-style: none;
+        }
+
+        .skill-list li {
+            position: relative;
+            padding-left: 1.2rem;
+            margin-bottom: 0.5rem;
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        .skill-list li::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: var(--primary);
+        }
+
+        /* Workflows & Highlights */
+        .workflow-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+            gap: 1rem;
+        }
+
+        .step-card {
+            text-align: center;
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            padding: 1.2rem 0.8rem;
+            border-radius: 8px;
+        }
+
+        .step-number {
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: var(--accent);
+            display: block;
+            margin-bottom: 0.3rem;
+        }
+
+        /* Experience */
+        .timeline {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .exp-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            margin-bottom: 0.8rem;
+        }
+
+        .exp-role {
+            font-size: 1.15rem;
+            font-weight: 700;
+        }
+
+        .exp-meta {
+            color: var(--text-muted);
+            font-size: 0.88rem;
+        }
+
+        /* Projects Case Studies */
+        .projects-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .project-card {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 2rem;
+        }
+
+        .project-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .project-tag {
+            background-color: rgba(59, 130, 246, 0.1);
+            color: var(--primary);
+            padding: 0.2rem 0.6rem;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        .case-study-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .case-block h4 {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: var(--accent);
+            margin-bottom: 0.3rem;
+        }
+
+        .case-block p {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        /* Certifications */
+        .cert-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .cert-card {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 1.5rem;
+        }
+
+        .cert-title {
+            font-size: 1.05rem;
+            font-weight: 700;
+            margin-bottom: 0.3rem;
+        }
+
+        .cert-issuer {
+            font-size: 0.88rem;
+            color: var(--accent);
+            margin-bottom: 0.5rem;
+        }
+
+        .cert-meta {
+            font-size: 0.82rem;
+            color: var(--text-muted);
+            margin-bottom: 1rem;
+        }
+
+        .cert-actions {
+            display: flex;
+            gap: 0.5rem;
+            margin-top: auto;
+            flex-wrap: wrap;
+        }
+
+        /* Contact & Details */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+        }
+
+        .contact-info-list {
+            list-style: none;
+            margin-top: 1rem;
+        }
+
+        .contact-info-list li {
+            margin-bottom: 0.8rem;
+            color: var(--text-muted);
+        }
+
+        .contact-info-list strong {
+            color: var(--text-main);
+        }
+
+        /* Footer */
+        footer {
+            padding: 2.5rem 0;
+            text-align: center;
+            border-top: 1px solid var(--border-color);
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+            .hero-title { font-size: 2.2rem; }
+            .about-grid, .contact-grid { grid-template-columns: 1fr; }
+            .nav-links { display: none; } /* Simplified mobile handling */
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Navigation -->
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">TAHIR M. NUR</div>
+                <ul class="nav-links">
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#experience">Experience</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#certifications">Certifications</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+                <a href="tahirmuhammadnur6@gmail.com" class="btn btn-primary" onclick="alert('Please download CV directly from attached Tahir_Muhammad_Nur_Final_ATS_CV.pdf')">Download CV</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="hero">
+        <div class="container">
+            <h1 class="hero-title">TAHIR MUHAMMAD NUR</h1>
+            <p class="hero-subtitle">AI Trainer | AI Data & Evaluation Specialist | Prompt Engineer</p>
+            <p class="hero-bio">
+                Detail-oriented AI Training and Data Operations professional with experience in AI response evaluation, prompt engineering, data annotation, quality assurance, data collection, and AI-assisted development.
+            </p>
+            <div class="hero-cta">
+                <a href="#projects" class="btn btn-primary">View My Work</a>
+                <a href="#contact" class="btn btn-outline">Contact Me</a>
+                <a href="https://www.linkedin.com/in/tahir-muhammad-nur-37719731a" target="_blank" rel="noopener" class="btn btn-outline">LinkedIn</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Professional Summary & About Me -->
+    <section id="about">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-grid">
+                <div class="card">
+                    <p style="margin-bottom: 1rem;">
+                        I am an early-career AI and technology professional focused on artificial intelligence, data quality, AI evaluation, prompt engineering, and AI-assisted development.
+                    </p>
+                    <p style="margin-bottom: 1rem;">
+                        I enjoy analyzing AI-generated outputs, identifying errors and edge cases, improving prompts, reviewing data, and finding practical solutions to technical and quality-related problems.
+                    </p>
+                    <p>
+                        I am currently studying Computer Science at the University of Maiduguri (Expected Graduation: 2029) and continuously developing my practical skills through professional training, AI projects, and hands-on technology work. My goal is to contribute to organizations building reliable, useful, and responsible AI systems.
+                    </p>
+                </div>
+                <div class="card">
+                    <h3 style="font-size: 1.1rem; margin-bottom: 1rem; color: var(--accent);">Availability & Details</h3>
+                    <ul class="skill-list">
+                        <li><strong>Location:</strong> Maiduguri, Borno State, Nigeria</li>
+                        <li><strong>Timezone:</strong> WAT (UTC+1)</li>
+                        <li><strong>Open to:</strong> Remote, contract, freelance AI/Data roles</li>
+                        <li><strong>Languages:</strong> English, Hausa, Kanuri</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Core Skills -->
+    <section id="skills">
+        <div class="container">
+            <h2 class="section-title">Core Skills & Tools</h2>
+            <div class="skills-grid">
+                <div class="card skill-card">
+                    <h3>AI & LLM Operations</h3>
+                    <ul class="skill-list">
+                        <li>Prompt Engineering</li>
+                        <li>LLM Evaluation & AI Safety</li>
+                        <li>Generative AI Testing</li>
+                        <li>Human-in-the-Loop (HITL)</li>
+                        <li>AI Data Annotation</li>
+                        <li>Model Output Quality Analysis</li>
+                        <li>Edge-Case Testing & Instruction Following</li>
+                    </ul>
+                </div>
+                <div class="card skill-card">
+                    <h3>AI-Assisted Development</h3>
+                    <ul class="skill-list">
+                        <li>Claude Code & Gemini</li>
+                        <li>AI-Assisted Code Generation</li>
+                        <li>Code Understanding & Refinement</li>
+                        <li>Debugging & Troubleshooting</li>
+                        <li>HTML / CSS</li>
+                        <li>Automation Workflows</li>
+                    </ul>
+                </div>
+                <div class="card skill-card">
+                    <h3>Data & Quality Assurance</h3>
+                    <ul class="skill-list">
+                        <li>Data Quality Assurance</li>
+                        <li>Data Collection & Verification</li>
+                        <li>Dataset Review & Auditing</li>
+                        <li>Data Entry & Web Research</li>
+                        <li>Process Documentation</li>
+                    </ul>
+                </div>
+                <div class="card skill-card">
+                    <h3>Tools & Productivity</h3>
+                    <ul class="skill-list">
+                        <li>Claude Code, Gemini</li>
+                        <li>Textastic, Netlify</li>
+                        <li>Microsoft Word, Google Docs</li>
+                        <li>Google Sheets, Web Research</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Professional Workflow Section -->
+    <section id="workflow">
+        <div class="container">
+            <h2 class="section-title">My Execution Workflow</h2>
+            <div class="workflow-steps">
+                <div class="step-card">
+                    <span class="step-number">01</span>
+                    <strong>UNDERSTAND</strong>
+                    <p style="font-size: 0.8rem; color: var(--text-muted); margin-top: 0.3rem;">Clarify task goals, criteria, and constraints.</p>
+                </div>
+                <div class="step-card">
+                    <span class="step-number">02</span>
+                    <strong>ANALYZE</strong>
+                    <p style="font-size: 0.8rem; color: var(--text-muted); margin-top: 0.3rem;">Examine prompts, model outputs, or data.</p>
+                </div>
+                <div class="step-card">
+                    <span class="step-number">03</span>
+                    <strong>IDENTIFY</strong>
+                    <p style="font-size: 0.8rem; color: var(--text-muted); margin-top: 0.3rem;">Locate reasoning errors, safety issues, and bugs.</p>
+                </div>
+                <div class="step-card">
+                    <span class="step-number">04</span>
+                    <strong>IMPROVE</strong>
+                    <p style="font-size: 0.8rem; color: var(--text-muted); margin-top: 0.3rem;">Refine prompts, fix code, or adjust labels.</p>
+                </div>
+                <div class="step-card">
+                    <span class="step-number">05</span>
+                    <strong>VALIDATE</strong>
+                    <p style="font-size: 0.8rem; color: var(--text-muted); margin-top: 0.3rem;">Perform thorough quality checks.</p>
+                </div>
+                <div class="step-card">
+                    <span class="step-number">06</span>
+                    <strong>DELIVER</strong>
+                    <p style="font-size: 0.8rem; color: var(--text-muted); margin-top: 0.3rem;">Provide accurate and consistent outputs.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Professional Experience -->
+    <section id="experience">
+        <div class="container">
+            <h2 class="section-title">Professional Experience</h2>
+            <div class="timeline">
+                
+                <div class="card">
+                    <div class="exp-header">
+                        <div>
+                            <div class="exp-role">AI Trainer & Data Operations Associate</div>
+                            <div style="color: var(--accent); font-size: 0.9rem;">Remote / Contract</div>
+                        </div>
+                        <div class="exp-meta">January 2024 – Present</div>
+                    </div>
+                    <ul class="skill-list">
+                        <li>Evaluate AI-generated responses for accuracy, relevance, instruction-following, safety, and overall quality.</li>
+                        <li>Review LLM outputs across prompts and scenarios, identifying errors, inconsistencies, and edge cases.</li>
+                        <li>Create, test, and refine prompts to evaluate AI model performance and improve response quality.</li>
+                        <li>Perform data annotation, labeling, and quality-review tasks within human-in-the-loop workflows.</li>
+                        <li>Apply project guidelines consistently and provide clear, actionable feedback on recurring quality issues.</li>
+                        <li>Use AI-assisted tools and workflows to generate, understand, modify, and troubleshoot code for technical tasks.</li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <div class="exp-header">
+                        <div>
+                            <div class="exp-role">Community Volunteer Teacher</div>
+                            <div style="color: var(--accent); font-size: 0.9rem;">Street Child — Maiduguri, Borno State</div>
+                        </div>
+                        <div class="exp-meta">2025 – Present</div>
+                    </div>
+                    <ul class="skill-list">
+                        <li>Teach and support out-of-school children through structured learning activities.</li>
+                        <li>Prepare learning activities, monitor participation and progress, and maintain accurate records.</li>
+                        <li>Communicate with colleagues, parents, and community members to support student participation.</li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <div class="exp-header">
+                        <div>
+                            <div class="exp-role">Enumerator</div>
+                            <div style="color: var(--accent); font-size: 0.9rem;">Freelance — Maiduguri, Borno State</div>
+                        </div>
+                    </div>
+                    <ul class="skill-list">
+                        <li>Collect survey and field data through structured interviews and questionnaires.</li>
+                        <li>Verify information for accuracy and completeness and maintain organized records.</li>
+                        <li>Follow data-collection guidelines and handle collected information responsibly.</li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Projects / Case Studies -->
+    <section id="projects">
+        <div class="container">
+            <h2 class="section-title">Featured Projects</h2>
+            <div class="projects-grid">
+
+                <!-- Project 1 -->
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3 style="font-size: 1.3rem;">AAN Services Website — AI-Assisted Web Development</h3>
+                        <span class="project-tag">Gemini | HTML/CSS | Textastic | Netlify</span>
+                    </div>
+                    <p style="color: var(--text-muted); margin-bottom: 1rem;">
+                        Designed and deployed a multi-service business website using AI-assisted coding and structured prompt engineering workflows.
+                    </p>
+                    <div class="case-study-grid">
+                        <div class="case-block">
+                            <h4>Problem</h4>
+                            <p>AAN Services needed an online presence to show multi-department services and let clients contact them easily.</p>
+                        </div>
+                        <div class="case-block">
+                            <h4>Approach</h4>
+                            <p>Utilized Gemini and prompt engineering in Textastic to generate, test, and troubleshoot code components iteratively.</p>
+                        </div>
+                        <div class="case-block">
+                            <h4>Solution</h4>
+                            <p>Built full service sections, FAQs, WhatsApp contact integration, and a custom solar power estimator module.</p>
+                        </div>
+                        <div class="case-block">
+                            <h4>Result</h4>
+                            <p>Successfully deployed live on Netlify as a responsive, fully operational commercial business landing page.</p>
+                        </div>
+                    </div>
+                    <div style="margin-top: 1.5rem;">
+                        <a href="https://aanservicescom.netlify.app" target="_blank" rel="noopener" class="btn btn-primary">View Live Website</a>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3 style="font-size: 1.2rem;">AI Response Evaluation & Quality Review</h3>
+                        <span class="project-tag">LLM Quality Assurance</span>
+                    </div>
+                    <p style="color: var(--text-muted);">
+                        Evaluated LLM outputs against strict accuracy, safety, instruction adherence, and logical reasoning criteria.
+                    </p>
+                    <div class="case-study-grid">
+                        <div class="case-block">
+                            <h4>Problem</h4>
+                            <p>LLM outputs can sound convincing while hiding subtle factual inaccuracy, logic errors, or safety flaws.</p>
+                        </div>
+                        <div class="case-block">
+                            <h4>Approach</h4>
+                            <p>Applied structured review taxonomies, edge-case probing, and detailed human-in-the-loop scoring methodologies.</p>
+                        </div>
+                        <div class="case-block">
+                            <h4>Result</h4>
+                            <p>Formulated actionable issue logs and structured guidelines feedback to improve model response accuracy.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3 style="font-size: 1.2rem;">Prompt Engineering & LLM Testing</h3>
+                        <span class="project-tag">Prompt Design</span>
+                    </div>
+                    <p style="color: var(--text-muted);">
+                        Designed, benchmarked, and refined structured prompt techniques across varying contextual boundaries and model constraints.
+                    </p>
+                    <div class="case-study-grid">
+                        <div class="case-block">
+                            <h4>Approach</h4>
+                            <p>Iteratively introduced system rules, few-shot examples, and boundary conditions to assess output stability.</p>
+                        </div>
+                        <div class="case-block">
+                            <h4>Result</h4>
+                            <p>Identified vulnerability points in complex instruction-following and improved prompt efficiency.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Certifications Section -->
+    <section id="certifications">
+        <div class="container">
+            <h2 class="section-title">Featured Certifications & Training</h2>
+            <div class="cert-grid">
+
+                <!-- Cert 1 -->
+                <div class="cert-card">
+                    <div>
+                        <div class="cert-title">Claude Code in Action</div>
+                        <div class="cert-issuer">Anthropic</div>
+                        <div class="cert-meta">Verified Skilljar Certification</div>
+                    </div>
+                    <div class="cert-actions">
+                        <a href="https://verify.skilljar.com/c/mypkvq63wnsq" target="_blank" rel="noopener" class="btn btn-outline" style="font-size:0.8rem;">Verify Credential</a>
+                    </div>
+                </div>
+
+                <!-- Cert 2 -->
+                <div class="cert-card">
+                    <div>
+                        <div class="cert-title">Claude Code 101</div>
+                        <div class="cert-issuer">Anthropic</div>
+                        <div class="cert-meta">Verified Skilljar Certification</div>
+                    </div>
+                    <div class="cert-actions">
+                        <a href="https://verify.skilljar.com/c/whztamks2cox" target="_blank" rel="noopener" class="btn btn-outline" style="font-size:0.8rem;">Verify Credential</a>
+                    </div>
+                </div>
+
+                <!-- Cert 3 -->
+                <div class="cert-card">
+                    <div>
+                        <div class="cert-title">AI Fluency: Framework & Foundations</div>
+                        <div class="cert-issuer">Anthropic</div>
+                        <div class="cert-meta">Verified Skilljar Certification</div>
+                    </div>
+                    <div class="cert-actions">
+                        <a href="https://verify.skilljar.com/c/8558ud4uapgs" target="_blank" rel="noopener" class="btn btn-outline" style="font-size:0.8rem;">Verify Credential</a>
+                    </div>
+                </div>
+
+                <!-- Cert 4 -->
+                <div class="cert-card">
+                    <div>
+                        <div class="cert-title">Artificial Intelligence & Machine Learning Practical Mastery</div>
+                        <div class="cert-issuer">Coursera & DeepLearning.AI</div>
+                        <div class="cert-meta">Issued April 14, 2026 | ID: COURSERA-AI-2026-98421</div>
+                        <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 0.8rem;">
+                            Covers Prompt Engineering, LLMs, Generative AI Tools & Workflows (Signatory: Andrew Ng).
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Cert 5 -->
+                <div class="cert-card">
+                    <div>
+                        <div class="cert-title">Micro1 AI Interview Certification</div>
+                        <div class="cert-issuer">Micro1</div>
+                        <div class="cert-meta">Issued August 16, 2026</div>
+                        <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 0.8rem;">
+                            Recognizes outstanding technical performance during Micro1's AI Evaluation Interview.
+                        </p>
+                    </div>
+                    <div class="cert-actions">
+                        <a href="https://micro1-portal-data.s3.amazonaws.com/engineer-certificates/1786890235-357825d5-8bd9-4f5b-bffc-224f6cb46071.jpg" target="_blank" rel="noopener" class="btn btn-outline" style="font-size:0.8rem;">View Certificate</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education">
+        <div class="container">
+            <h2 class="section-title">Education</h2>
+            <div class="skills-grid">
+                <div class="card">
+                    <h3 style="color: var(--text-main);">B.Sc. Computer Science</h3>
+                    <div style="color: var(--accent); font-size: 0.9rem;">University of Maiduguri, Borno State, Nigeria</div>
+                    <div style="color: var(--text-muted); font-size: 0.85rem; margin-top: 0.3rem;">Expected Graduation: 2029</div>
+                </div>
+                <div class="card">
+                    <h3 style="color: var(--text-main);">Senior Secondary School Certificate (SSCE)</h3>
+                    <div style="color: var(--accent); font-size: 0.9rem;">Ansar Uddeen College</div>
+                    <div style="color: var(--text-muted); font-size: 0.85rem; margin-top: 0.3rem;">2019 – 2024</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="container">
+            <h2 class="section-title">LET'S WORK TOGETHER</h2>
+            <div class="contact-grid">
+                <div>
+                    <p style="color: var(--text-muted); margin-bottom: 1rem;">
+                        Interested in working together on AI training, data operations, AI evaluation, data annotation, prompt engineering, AI-assisted development, content quality, or research projects? I'd be happy to connect.
+                    </p>
+                    <ul class="contact-info-list">
+                        <li><strong>Email:</strong> <a href="mailto:tahirmuhammadnur6@gmail.com">tahirmuhammadnur6@gmail.com</a></li>
+                        <li><strong>Phone:</strong> <a href="tel:08067359225">08067359225</a></li>
+                        <li><strong>Location:</strong> Maiduguri, Borno State, Nigeria</li>
+                        <li><strong>Time Zone:</strong> West Africa Time (WAT / UTC+1)</li>
+                    </ul>
+                </div>
+                <div class="card" style="display: flex; flex-direction: column; justify-content: center; gap: 1rem;">
+                    <a href="mailto:tahirmuhammadnur6@gmail.com" class="btn btn-primary">Email Me Directly</a>
+                    <a href="https://www.linkedin.com/in/tahir-muhammad-nur-37719731a" target="_blank" rel="noopener" class="btn btn-outline">Connect on LinkedIn</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p style="font-weight: 700; color: var(--text-main); margin-bottom: 0.3rem;">TAHIR MUHAMMAD NUR</p>
+            <p>AI Trainer | AI Data & Evaluation Specialist | Prompt Engineer</p>
+            <p style="font-size: 0.8rem; margin-top: 0.8rem;">Maiduguri, Nigeria | WAT (UTC+1)</p>
+            <p style="font-size: 0.8rem; margin-top: 0.5rem;">© 2026 Tahir Muhammad Nur. All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
